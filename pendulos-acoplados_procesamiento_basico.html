@@ -127,6 +127,27 @@
                        <a href="/experimental1/ipynb/Procesamiento_Datos-PA.zip">Descargar como IPython Notebook</a>
                     </div>
                     
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+<style type="text/css">
+//div.output_wrapper {
+//  margin-top: 0px;
+//}
+.input_hidden {
+  display: none;
+//  margin-top: 5px;
+}
+</style>
+
+<script>
+$(document).ready(function(){
+  $(".output_wrapper").click(function(){
+      $(this).prev('.input_hidden').slideToggle();
+  });
+})
+</script>
+	
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -147,37 +168,14 @@ Al principio de las celdas, entre líneas de <code>##################</code> est
 </div>
 </div>
 </div>
+	
 <div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="c">### Importaciones de rigor</span>
 
-<span class="o">%</span><span class="k">pylab</span> inline
-<span class="kn">from</span> <span class="nn">scipy.interpolate</span> <span class="k">import</span> <span class="n">interp1d</span>
-<span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="k">import</span> <span class="n">cumtrapz</span>
-</pre></div>
+    
+	
 
 </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Populating the interactive namespace from numpy and matplotlib
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
+	
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -187,8 +185,11 @@ Al principio de las celdas, entre líneas de <code>##################</code> est
 </div>
 </div>
 </div>
+	
 <div class="cell border-box-sizing code_cell rendered">
-<div class="input">
+
+    <div class="input_hidden">
+        <div class="input">
 <div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
@@ -223,19 +224,9 @@ Al principio de las celdas, entre líneas de <code>##################</code> est
                 <span class="n">fo</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">dataP</span><span class="p">)</span>
                 
         <span class="k">return</span> <span class="n">loadV2</span><span class="p">(</span><span class="n">filenam</span><span class="p">)</span>
-</pre></div>
 
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="c">### Cargo y observo los datos</span>
+    
+<span class="c">### Cargo y observo los datos</span>
 
 <span class="c">### cargo datos</span>
 <span class="n">x</span><span class="p">,</span><span class="n">y1</span><span class="p">,</span><span class="n">y2</span><span class="o">=</span><span class="n">loadV2</span><span class="p">(</span><span class="n">pathFile</span><span class="p">)</span>
@@ -271,6 +262,9 @@ Al principio de las celdas, entre líneas de <code>##################</code> est
 </div>
 </div>
 
+    </div>
+    
+	
 <div class="output_wrapper">
 <div class="output">
 
@@ -1367,7 +1361,10 @@ TkSuQmCC
 </div>
 </div>
 
+	
+
 </div>
+	
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -1384,9 +1381,12 @@ Elegimos como umbral: 2 veces la desviación estándar de esa&nbsp;resta.</p>
 </div>
 </div>
 </div>
+	
 <div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+
+    <div class="input_hidden">
+        <div class="input">
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span class="c">##############################################################</span>
@@ -1451,34 +1451,11 @@ Elegimos como umbral: 2 veces la desviación estándar de esa&nbsp;resta.</p>
 <span class="n">y2M</span><span class="o">=</span><span class="n">y2ext</span><span class="p">[</span><span class="n">i2M</span><span class="p">]</span>
 
 <span class="nb">print</span> <span class="p">(</span><span class="s">&#39;umbrales:&#39;</span><span class="p">,</span><span class="n">umbral1</span><span class="p">,</span><span class="n">umbral2</span><span class="p">)</span>
-</pre></div>
 
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>umbrales: 1.18421763865 1.78704817973
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="c">## Figuras de chequeo</span>
-<span class="c">## comentando y cambiando los límites, puedo observar diferentes detalles</span>
+<span class="c">#########################################</span>
+<span class="c">## Figuras de chequeo</span>
+<span class="c">## comentando y cambiando los límites, </span>
+<span class="c">## puedo observar diferentes detalles</span>
 
 <span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
 <span class="n">xmax</span><span class="o">=</span><span class="mi">5</span>
@@ -1516,9 +1493,19 @@ Elegimos como umbral: 2 veces la desviación estándar de esa&nbsp;resta.</p>
 </div>
 </div>
 
+    </div>
+    
+	
 <div class="output_wrapper">
 <div class="output">
 
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>umbrales: 1.18421763865 1.78704817973
+</pre>
+</div>
+</div>
 
 <div class="output_area"><div class="prompt"></div>
 
@@ -2767,7 +2754,10 @@ Y4wxxhhjSXGjkTHGGGOMMcZYUtxoZIwxxhhjjDGW1P8D6mYDWzCJE2IAAAAASUVORK5CYII=
 </div>
 </div>
 
+	
+
 </div>
+	
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -2781,9 +2771,12 @@ La idea es ubicar la secuencia de máximos con la pendiente correcta, y que no e
 </div>
 </div>
 </div>
+	
 <div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+
+    <div class="input_hidden">
+        <div class="input">
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span class="c">######################################</span>
@@ -2872,20 +2865,25 @@ La idea es ubicar la secuencia de máximos con la pendiente correcta, y que no e
 <span class="n">grid</span><span class="p">()</span>
 <span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 
-<span class="nb">print</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">Z1</span><span class="p">)</span><span class="o">+</span><span class="nb">len</span><span class="p">(</span><span class="n">Z2</span><span class="p">),</span> <span class="s">&#39;picos procesados&#39;</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s">&#39;</span><span class="se">\n</span><span class="s">&#39;</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">Z1</span><span class="p">)</span><span class="o">+</span><span class="nb">len</span><span class="p">(</span><span class="n">Z2</span><span class="p">),</span> <span class="s">&#39;picos procesados&#39;</span><span class="p">,</span><span class="s">&#39;</span><span class="se">\n</span><span class="s">.&#39;</span><span class="p">)</span>
 </pre></div>
 
 </div>
 </div>
 </div>
 
+    </div>
+    
+	
 <div class="output_wrapper">
 <div class="output">
 
 
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>304 picos procesados
+<pre>
+ 304 picos procesados 
+.
 </pre>
 </div>
 </div>
@@ -3704,7 +3702,10 @@ SsijU8z3jQ0AAAAASUVORK5CYII=
 </div>
 </div>
 
+	
+
 </div>
+	
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -3717,9 +3718,12 @@ $$ Z_1,\ H_1,\ W_1,\ \ Z_2,\ H_2,\ W_2 $$<p>en formato  <code>csv</code>  (<em>c
 </div>
 </div>
 </div>
+	
 <div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+
+    <div class="input_hidden">
+        <div class="input">
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span class="c">#############</span>
@@ -3752,26 +3756,33 @@ $$ Z_1,\ H_1,\ W_1,\ \ Z_2,\ H_2,\ W_2 $$<p>en formato  <code>csv</code>  (<em>c
                <span class="n">item</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">+</span> <span class="s">&#39;,&#39;</span> <span class="o">+</span> <span class="n">item</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">+</span> <span class="s">&#39;,&#39;</span> <span class="o">+</span> <span class="n">item</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="o">+</span> <span class="s">&#39;</span><span class="se">\n</span><span class="s">&#39;</span>
         <span class="n">fo</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
 
-<span class="nb">print</span> <span class="p">(</span><span class="n">filOu</span><span class="p">,</span><span class="s">&#39;----&gt; Escrito.&#39;</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s">&#39;</span><span class="se">\n</span><span class="s">&#39;</span><span class="p">,</span><span class="n">filOu</span><span class="p">,</span><span class="s">&#39;----&gt; Escrito.</span><span class="se">\n</span><span class="s">.&#39;</span><span class="p">)</span>
 </pre></div>
 
 </div>
 </div>
 </div>
 
+    </div>
+    
+	
 <div class="output_wrapper">
 <div class="output">
 
 
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>./Longitudes/Longitud4-med.csv ----&gt; Escrito.
+<pre>
+ ./Longitudes/Longitud4-med.csv ----&gt; Escrito.
+.
 </pre>
 </div>
 </div>
 
 </div>
 </div>
+
+	
 
 </div>
                     
